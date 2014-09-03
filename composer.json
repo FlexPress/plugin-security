@@ -1,7 +1,7 @@
 {
     "name": "flexpress/plugin-security",
     "description": "FlexPress based plugin",
-    "type": "project",
+    "type": "wordpress-plugin",
     "license": "MIT",
     "require": {
         "pimple/pimple": "2.0.*",
