@@ -1,0 +1,19 @@
+<style>
+    .field-group { margin-bottom: 12px; }
+    .field-group label { display: block; margin-bottom: 6px; }
+</style>
+<h1>Security options page</h1>
+
+<form action="options.php" method="post">
+    {{ function('settings_fields', settingsGroupName) }}
+
+    <div class="field-group">
+        <label for="{{ fieldNames['expiryDays'] }}">User password expiry days:</label>
+        <input type="number" id="{{ fieldNames['expiryDays'] }}" name="{{ fieldNames['expiryDays'] }}" value="{{ currentValues['expiryDays'] }}">
+    </div>
+    <div class="field-group">
+        <label for="{{ fieldNames['disablePasswordResets'] }}">Disable password resets:</label>
+        <input type="checkbox" id="{{ fieldNames['disablePasswordResets'] }}" name="{{ fieldNames['disablePasswordResets'] }}" {% if currentValues['disablePasswordResets'] %} checked="checked" {% endif %}>
+    </div>
+    <input type="submit" value="Save" class="button-primary" />
+</form>
